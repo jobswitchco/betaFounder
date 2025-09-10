@@ -26,12 +26,12 @@ export default function LandingPage() {
   return (
     <>
   <Helmet>
-  <title>LinkedIn Post Generator with AI | PostLn</title>
+  <title>Helping Founders Build, Share & Scale with AI - betaFounder</title>
   <meta
     name="description"
-    content="AI LinkedIn post generator for professionals. Write, rewrite, and schedule engaging LinkedIn content tailored to your tone and audience."
+    content="betaFounder helps early-stage founders share authentic ideas, build in public, and grow with AI-powered content tools."
   />
-  <link rel="canonical" href="https://www.postln.com/" />
+  <link rel="canonical" href="https://www.betafounder.co/" />
 
 </Helmet>
 
