@@ -1,0 +1,432 @@
+import { useState, useEffect } from 'react'
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import {
+  Box,
+  Typography,
+  Grid,
+  Rating, 
+  Avatar, 
+  Stack,
+  Button
+} from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import logo from "../../images/postln_logo.svg";
+import { toast } from "react-toastify";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Helmet } from "react-helmet";
+
+
+
+
+
+
+
+
+
+
+function LinkedInUserLogin() {
+
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const baseUrl = "http://localhost:8001/usersOn";
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const CLIENT_ID = "KbB5ag-QacWNWVRS_HQX1Q";
+  const REDIRECT_URI = "http://localhost:4900/auth/reddit/callback";
+  const STATE = "randomSecureState123"; // must match backend check
+  const SCOPE = "identity read submit flair mysubreddits subscribe"; // add scopes as needed
+
+
+   useEffect(() => {
+            const verifyToken = async () => {
+              setLoading(true);
+            
+              try {
+                const res = await axios.get(`${baseUrl}/verify-login-token`, { withCredentials: true });
+            
+                if (res.data.valid) {
+
+      navigate("/professional/dashboard");
+
+                  
+                } else {
+                }
+              } catch (error) {
+                if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+                } else {
+                }
+              } finally {
+                setLoading(false);
+              }
+            };
+            
+        
+            verifyToken();
+          }, []);
+  
+
+  const handleSignIn = () => {
+    const authUrl = `https://www.reddit.com/api/v1/authorize?client_id=${CLIENT_ID}&response_type=code&state=${STATE}&redirect_uri=${encodeURIComponent(
+      REDIRECT_URI
+    )}&duration=permanent&scope=${encodeURIComponent(SCOPE)}`;
+    window.location.href = authUrl;
+  };
+
+
+
+
+  return (
+    <>
+{/* <Grid container spacing='2'> */}
+
+
+<Helmet>
+  <title>Log In to PostLn | Continue with LinkedIn</title>
+  <meta
+    name="description"
+    content="Sign in to PostLn with your LinkedIn account to create AI-powered LinkedIn posts in your voice, schedule content, and grow your audience."
+  />
+
+  {/* Do not index login pages */}
+  <meta name="robots" content="noindex, nofollow" />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://www.postln.com/professional/login" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Log In to PostLn | Continue with LinkedIn" />
+  <meta
+    property="og:description"
+    content="Use your LinkedIn account to access PostLn and craft authentic posts in minutes."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.postln.com/professional/login" />
+  <meta
+    property="og:image"
+    content="https://storage.googleapis.com/postlnbucketcom/logo_512x512-removebg-preview.png"
+  />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Log In to PostLn | Continue with LinkedIn" />
+  <meta
+    name="twitter:description"
+    content="Sign in with LinkedIn to start creating AI-personalized LinkedIn posts."
+  />
+  <meta
+    name="twitter:image"
+    content="https://storage.googleapis.com/postlnbucketcom/logo_512x512-removebg-preview.png"
+  />
+</Helmet>
+
+
+{isSmallScreen ? ( 
+
+<Grid item xs={12} paddingX={2}>
+  
+
+{loading ? (
+<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%', marginTop: '30%' }}>
+<CircularProgress color= 'success' />
+</div>
+) : ( <>
+
+<Box position="relative" minHeight="100vh">
+  {/* Top-left Logo */}
+  <Box position="absolute" top={15}>
+    <header
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        backgroundColor: "#F5F7F8",
+        padding: "12px 24px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        zIndex: 50,
+      }}
+    >
+      <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}>
+        <img
+          src={logo}
+          alt="PostLn Logo"
+          width="40"
+          height="auto"
+          loading="eager"
+          decoding="async"
+          style={{ display: "block" }}
+        />
+        <div style={{ marginLeft: 2, fontWeight: 600, fontSize: "1.2rem" }}>PostLn</div>
+      </Link>
+    </header>
+  </Box>
+
+  {/* Centered Login Box */}
+  <Box
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+    minHeight="100vh"
+  >
+    {isLoading ? (
+      <Box display="flex" alignItems="center" justifyContent="center" height="100%">
+        <CircularProgress color='success' />
+      </Box>
+    ) : (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="100%"
+        position="relative"
+      >
+        {/* Logo absolute */}
+        <Box position="absolute" top={16} left={24}>
+    
+      <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}>
+        <img
+          src={logo}
+          alt="PostLn Logo"
+          width="40"
+          height="auto"
+          loading="eager"
+          decoding="async"
+          style={{ display: "block" }}
+        />
+        <div style={{ marginLeft: 2, fontWeight: 600, fontSize: "1.2rem" }}>PostLn</div>
+      </Link>
+  
+        </Box>
+
+        {/* Center content */}
+        <Box
+      minHeight="100vh"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      textAlign="center"
+      sx={{
+        px: 1,
+      }}
+    >
+
+      {/* Headline */}
+      <Typography gutterBottom sx={{ fontSize : '22px', fontFamily : 'Inter', fontWeight : 600, mb: 2}}>
+        Let's get started
+      </Typography>
+
+      {/* Subtext */}
+      <Typography color="text.secondary" mb={4} sx={{ fontSize : '15px', fontFamily : 'Inter'}}>
+        Instantly create AI-powered LinkedIn content tailored to your voice and audience.
+      </Typography>
+
+      {/* LinkedIn Button */}
+      <Button
+        variant="contained"
+        onClick={handleSignIn}
+        startIcon={<LinkedInIcon />}
+        sx={{
+          backgroundColor: '#1B56FD',
+          textTransform: 'none',
+          fontSize: '16px',
+          fontWeight: 400,
+          px: 4,
+          py: 0.8,
+          borderRadius: 2,
+          '&:hover': {
+            backgroundColor: '#004182',
+          },
+        }}
+      >
+        Continue with LinkedIn
+      </Button>
+
+      {/* Subtext */}
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        mt={3}
+        sx={{ fontSize : '12px', fontFamily : 'Inter' }}
+      >
+        Connect with LinkedIn to unlock smart scheduling and AI-personalized content creation.
+      </Typography>
+    </Box>
+      </Box>
+    )}
+  </Box>
+</Box>
+
+
+
+    </>)}
+
+
+</Grid> ) : (
+
+<Grid container sx={{ height: '100vh', overflow: 'hidden', p : 1}}>
+  {/* Left Section */}
+  <Grid item xs={5} md={5} lg={5} sx={{ background: '#362FD9', borderRadius: '26px', overflowY: 'auto' }}>
+    <Box display="flex" flexDirection="column" margin="auto" p={1}>
+      <Typography textAlign="start" sx={{
+        fontSize: '46px',
+        fontWeight: '500',
+        color: 'white',
+        paddingX: '20px',
+        pt: 10
+      }}>
+        Welcome to PostLn
+      </Typography>
+
+      <Typography textAlign="start" sx={{ fontSize: '22px', color: 'white', paddingX: '20px' }}>
+       Instantly craft AI-powered LinkedIn content in your voice, 
+      grow your audience, and schedule posts effortlessly.
+      </Typography>
+    </Box>
+
+    <Box display="flex" flexDirection="column" margin="auto" padding={1} mt={5}>
+      <Rating
+        sx={{ paddingX: '20px' }}
+        name="half-rating-read"
+        defaultValue={4.5}
+        precision={0.5}
+        readOnly
+      />
+
+      <Typography textAlign="start" sx={{
+        fontSize: '14px',
+        color: 'white',
+        paddingX: '20px',
+        paddingTop: '2%'
+      }}>
+        "We're excited about this game-changing platform for Linkedin..."
+      </Typography>
+
+      <Stack
+        direction="row"
+        spacing={2}
+        alignItems="center"
+        sx={{ marginTop: '5%', paddingX: '20px' }}
+      >
+        <Avatar alt="Karan Jaiswal" sx={{ width: 40, height: 40 }} />
+        <Box>
+          <Typography sx={{ fontSize: '14px', color: 'white' }}>
+            Priya Singh
+          </Typography>
+          <Typography sx={{ fontSize: '12px', color: '#E4F1FF' }}>
+            Public Speaker
+          </Typography>
+        </Box>
+      </Stack>
+    </Box>
+  </Grid>
+
+  {/* Right Section */}
+  <Grid item xs={7} md={7} lg={7} sx={{ position: 'relative' }}>
+    {isLoading ? (
+      <Box display="flex" alignItems="center" justifyContent="center" height="100%">
+        <CircularProgress color='success' />
+      </Box>
+    ) : (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="100%"
+        position="relative"
+      >
+        {/* Logo absolute */}
+        <Box position="absolute" top={16} left={24}>
+    
+      <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}>
+        <img
+          src={logo}
+          alt="PostLn Logo"
+          width="40"
+          height="auto"
+          loading="eager"
+          decoding="async"
+          style={{ display: "block" }}
+        />
+        <div style={{ marginLeft: 2, fontWeight: 600, fontSize: "1.2rem" }}>PostLn</div>
+      </Link>
+  
+        </Box>
+
+        {/* Center content */}
+        <Box
+      minHeight="100vh"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      textAlign="center"
+      sx={{
+        px: 2,
+      }}
+    >
+
+      {/* Headline */}
+      <Typography gutterBottom sx={{ fontSize : '28px', fontWeight : 600, mb: 2}}>
+        Let's get started
+      </Typography>
+
+      {/* Subtext */}
+      <Typography variant="subtitle1" color="text.secondary" maxWidth={400} mb={4}>
+        Instantly create AI-powered LinkedIn content tailored to your voice and audience.
+      </Typography>
+
+      {/* LinkedIn Button */}
+      <Button
+        variant="contained"
+        onClick={handleSignIn}
+        startIcon={<LinkedInIcon />}
+        sx={{
+          backgroundColor: '#1B56FD',
+          textTransform: 'none',
+          fontSize: '16px',
+          fontWeight: 400,
+          px: 4,
+          py: 0.8,
+          borderRadius: 2,
+          '&:hover': {
+            backgroundColor: '#004182',
+          },
+        }}
+      >
+        Continue with LinkedIn
+      </Button>
+
+      {/* Subtext */}
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        mt={3}
+        maxWidth={380}
+      >
+        Connect with LinkedIn to unlock smart scheduling and AI-personalized content creation.
+      </Typography>
+    </Box>
+      </Box>
+    )}
+  </Grid>
+</Grid>
+
+)}
+
+
+
+
+    </>
+  )
+}
+
+export default LinkedInUserLogin

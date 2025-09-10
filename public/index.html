@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon & Apple Touch -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+
+    <!-- ✅ Preload Logo (for LCP logo elements) -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/logo192.png" />
+
+
+
+    <link rel="preload" as="image" href="/postln_logo.svg" type="image/svg+xml">
+    
+
+    <!-- ✅ Preload & async load main CSS (non-blocking) -->
+    <link rel="preload" as="style" href="/static/css/main.7e94919d.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/static/css/main.7e94919d.css"></noscript>
+
+    <!-- ✅ Preconnect to Google Fonts for DNS/TLS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ✅ Preload and async load Google Fonts -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+
+
+    <!-- Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- ✅ Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR7630J1YJ"></script>
+   <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FR7630J1YJ', { send_page_view: false }); // important!
+</script>
+
+<title>PostLn</title>
+<meta name="description" content="PostLn helps professionals write and schedule LinkedIn posts with AI while keeping authenticity." />
+<meta name="google-site-verification" content="CETKVAossRw6jCWRL_s8eGjPEM6CCx10zTFjEL2_IH8" />
+
+<!-- OG for homepage -->
+<meta property="og:title" content="LinkedIn Post Generator with AI | PostLn" />
+<meta property="og:description" content="AI LinkedIn post generator for professionals. Write, rewrite, and schedule engaging LinkedIn content tailored to your tone and audience." />
+<meta property="og:image" content="https://storage.googleapis.com/postlnbucketcom/logo_512x512-removebg-preview.png" />
+<meta property="og:url" content="https://www.postln.com/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter for homepage -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LinkedIn Post Generator with AI | PostLn" />
+<meta name="twitter:description" content="AI LinkedIn post generator for professionals. Write, rewrite, and schedule engaging LinkedIn content tailored to your tone and audience." />
+<meta name="twitter:image" content="https://storage.googleapis.com/postlnbucketcom/logo_512x512-removebg-preview.png" />
+
+
+    <!-- Optional: Title (can be managed by React Helmet as well) -->
+    <!-- <title>Newrole — Fastest Way to Switch IT Jobs</title> -->
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
