@@ -8,23 +8,23 @@ export default function SaveTimePage() {
   return (
     <>
       <Helmet>
-        <title>Save 43+ Hours Every Month | PostLn</title>
+        <title>Save 43+ Hours Every Month | betaFounder</title>
         <meta
           name="description"
-          content="PostLn helps public speakers, founders, and creators save over 43 hours every month by automating LinkedIn post creation in your tone and style."
+          content="betaFounder helps public speakers, founders, and creators save over 43 hours every month by automating LinkedIn post creation in your tone and style."
         />
         <meta
           property="og:title"
-          content="Save 43+ Hours Every Month | PostLn"
+          content="Save 43+ Hours Every Month | betaFounder"
         />
         <meta
           property="og:description"
-          content="PostLn helps you skip the research and rewrite process. Go from idea to scheduled LinkedIn post in 3 minutes—saving 86+ minutes per day."
+          content="betaFounder helps you skip the research and rewrite process. Go from idea to scheduled LinkedIn post in 3 minutes—saving 86+ minutes per day."
         />
         <meta property="og:type" content="website" />
 
           {/* Canonical URL */}
-  <link rel="canonical" href="https://www.postln.com/save-time" />
+  <link rel="canonical" href="https://www.betafounder.co/save-time" />
 
 
       </Helmet>
@@ -63,7 +63,7 @@ export default function SaveTimePage() {
               If you’re a public speaker, founder, or creator, you know the effort that goes into one great post—researching, drafting, editing, rewriting. On average, it takes over 60–90 minutes.
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph>
-              PostLn reduces that to just 3–4 minutes. You select a trending topic, let our AI rewrite it in your voice and style, and schedule it—all in one flow.
+              betaFounder reduces that to just 3–4 minutes. You select a trending topic, let our AI rewrite it in your voice and style, and schedule it—all in one flow.
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph>
               The result? Up to <strong>86 minutes saved per day</strong>, or <strong>43+ hours every month</strong>. That’s time you can now invest in your stage, your product, or your next idea.

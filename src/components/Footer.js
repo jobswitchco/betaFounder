@@ -128,7 +128,7 @@ export default function Footer() {
           >
             Useful
           </Typography>
-          <Typography
+          {/* <Typography
             variant="body2"
             sx={{
               color: "#ccc",
@@ -140,7 +140,7 @@ export default function Footer() {
             <a href="/linkedin-text-formatter" target="_blank" rel="noopener noreferrer" style={linkStyle}>
                Linkedin Text Formatter [Free]
             </a>
-          </Typography>
+          </Typography> */}
             <Typography
             variant="body2"
             sx={{
@@ -226,7 +226,7 @@ export default function Footer() {
           <Box display="flex" justifyContent="flex-start" gap={2}>
            
             <IconButton
-              href="https://www.linkedin.com/company/postln"
+              href="https://www.linkedin.com/in/bhaskarsriram"
               target="_blank"
               color="inherit"
               sx={{ "&:hover": { color: "#E4405F" } }}

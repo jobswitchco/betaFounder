@@ -1,5 +1,3 @@
-// FeatureCardsShowcase.js
-import React from "react";
 import {
   Box,
   Grid,
@@ -16,6 +14,8 @@ import InsightsIcon from "@mui/icons-material/Insights";
 import ForumIcon from "@mui/icons-material/Forum";
 import HighlightIcon from "@mui/icons-material/Highlight";
 import ElectricBoltOutlinedIcon from '@mui/icons-material/ElectricBoltOutlined';
+import { useNavigate } from 'react-router-dom';
+
 
 const features = [
   {
@@ -51,6 +51,8 @@ const features = [
 export default function FeatureCardsShowcase() {
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const navigate = useNavigate();
+
 
   return (
     <Box
@@ -103,6 +105,7 @@ export default function FeatureCardsShowcase() {
             </Typography>
 
             <Button
+            onClick={()=> navigate('/join-waitlist')}
               variant="contained"
               sx={{
                 mt: 1,
@@ -115,7 +118,7 @@ export default function FeatureCardsShowcase() {
                 "&:hover": { backgroundColor: "#bfe06f" },
               }}
             >
-              Explore Sections
+              Get Early Access
             </Button>
           </Box>
         </Grid>

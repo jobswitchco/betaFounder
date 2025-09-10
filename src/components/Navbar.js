@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../images/postln_logo.svg";
+import logo from "../images/betaFounder_logo.png";
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -75,7 +75,7 @@ export default function Navbar() {
     left: 0,
     width: "100%",
     backgroundColor: "#f5f7f8",
-    padding: "12px 20px",
+    padding: "8px 15px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -91,16 +91,14 @@ export default function Navbar() {
   const leftStyle = {
     display: "flex",
     alignItems: "center",
-    gap: 10,
     textDecoration: "none",
     color: "inherit",
     minWidth: 0,
   };
 
   const brandTextStyle = {
-    marginLeft: 6,
-    fontWeight: 700,
-    fontSize: "1.02rem",
+    fontWeight: 600,
+    fontSize: "1.25rem",
     color: "#0b1220",
     letterSpacing: "-0.02em",
     whiteSpace: "nowrap",
@@ -292,8 +290,8 @@ export default function Navbar() {
   <img
     src={logo}
     alt="betaFounder Logo"
-    width="40"
-    height="40"
+    width="46"
+    height="46"
     loading="eager"
     decoding="async"
     style={{ display: "block" }}

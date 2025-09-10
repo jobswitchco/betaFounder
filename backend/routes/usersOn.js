@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 
 const CLIENT_ID = process.env.REDDIT_CLIENT_ID;
 const CLIENT_SECRET = process.env.REDDIT_CLIENT_SECRET;
-const REDIRECT_URI = "http://www.betafounder.co/auth/reddit/callback";
+const REDIRECT_URI = "http://betafounder.co/auth/reddit/callback";
 
 
 router.post("/logout", authenticateToken, (req, res) => {

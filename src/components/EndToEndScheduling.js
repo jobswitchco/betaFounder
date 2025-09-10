@@ -8,18 +8,18 @@ export default function EndToEndScheduling() {
   return (
     <>
       <Helmet>
-        <title>End-to-End Scheduling & Publishing | PostLn</title>
+        <title>End-to-End Scheduling & Publishing | betaFounder</title>
         <meta
           name="description"
-          content="Go from idea to scheduled LinkedIn post in minutes with PostLn. Discover trending topics, rewrite in your tone, and schedule—all in one place."
+          content="Go from idea to scheduled LinkedIn post in minutes with betaFounder. Discover trending topics, rewrite in your tone, and schedule—all in one place."
         />
         <meta
           property="og:title"
-          content="End-to-End Scheduling & Publishing | PostLn"
+          content="End-to-End Scheduling & Publishing | betaFounder"
         />
         <meta
           property="og:description"
-          content="PostLn handles your entire LinkedIn content flow—from topic inspiration to tone-accurate rewrite to scheduled publishing. All in one clean workflow."
+          content="betaFounder handles your entire LinkedIn content flow—from topic inspiration to tone-accurate rewrite to scheduled publishing. All in one clean workflow."
         />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -56,7 +56,7 @@ export default function EndToEndScheduling() {
             </Typography>
 
             <Typography variant="body1" color="text.secondary" paragraph>
-              Creating a high-quality LinkedIn post usually means switching between tabs, researching topics, rewriting multiple drafts, and then setting up scheduling tools. PostLn brings all of that under one roof.
+              Creating a high-quality LinkedIn post usually means switching between tabs, researching topics, rewriting multiple drafts, and then setting up scheduling tools. betaFounder brings all of that under one roof.
             </Typography>
 
             <Typography variant="body1" color="text.secondary" paragraph>

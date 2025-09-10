@@ -15,7 +15,7 @@ import {
 import CircularProgress from '@mui/material/CircularProgress';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import logo from "../../images/postln_logo.svg";
+import logo from "../../images/betaFounder_logo.png";
 import { toast } from "react-toastify";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Helmet } from "react-helmet";
@@ -41,7 +41,7 @@ function LinkedInUserLogin() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const CLIENT_ID = "KbB5ag-QacWNWVRS_HQX1Q";
   // const REDIRECT_URI = "http://localhost:4900/auth/reddit/callback";
-  const REDIRECT_URI = "http://www.betafounder.co/auth/reddit/callback";
+  const REDIRECT_URI = "http://betafounder.co/auth/reddit/callback";
   const STATE = "randomSecureState123"; // must match backend check
   const SCOPE = "identity read submit flair mysubreddits subscribe"; // add scopes as needed
 
@@ -90,7 +90,7 @@ function LinkedInUserLogin() {
 
 
 <Helmet>
-  <title>Log In to PostLn | Continue with LinkedIn</title>
+  <title>Log In to betaFounder_logo | Continue with LinkedIn</title>
   <meta
     name="description"
     content="Sign in to PostLn with your LinkedIn account to create AI-powered LinkedIn posts in your voice, schedule content, and grow your audience."
