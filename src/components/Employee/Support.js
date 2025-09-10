@@ -75,7 +75,7 @@ export default function Support() {
                   }
                 }}
               >
-                support@newrole.in
+                support@betafounder.co
               </Button>
             </CardActions>
             </CardContent>

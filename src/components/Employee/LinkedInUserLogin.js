@@ -34,11 +34,14 @@ function LinkedInUserLogin() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [loading, setLoading] = useState(false);
-  const baseUrl = "http://localhost:8001/usersOn";
+  // const baseUrl = "http://localhost:8001/usersOn";
+      const baseUrl="/api/usersOn";
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const CLIENT_ID = "KbB5ag-QacWNWVRS_HQX1Q";
-  const REDIRECT_URI = "http://localhost:4900/auth/reddit/callback";
+  // const REDIRECT_URI = "http://localhost:4900/auth/reddit/callback";
+  const REDIRECT_URI = "http://www.betafounder.co/auth/reddit/callback";
   const STATE = "randomSecureState123"; // must match backend check
   const SCOPE = "identity read submit flair mysubreddits subscribe"; // add scopes as needed
 

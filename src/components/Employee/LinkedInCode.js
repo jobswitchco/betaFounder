@@ -11,7 +11,9 @@ function LinkedInCode() {
   const location = useLocation();
   const code = new URLSearchParams(location.search).get('code');
   const dispatch = useDispatch();
-  const baseUrl = "http://localhost:8001/usersOn";
+  // const baseUrl = "http://localhost:8001/usersOn";
+      const baseUrl="/api/usersOn";
+
   const [isLoading, setIsLoading] = useState(true);
   const [dotCount, setDotCount] = useState(0);
 
