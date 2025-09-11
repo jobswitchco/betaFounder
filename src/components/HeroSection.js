@@ -204,9 +204,9 @@ export default function Hero({
           }}
           aria-hidden={isMobile}
         >
-          {"Community Driven "}
+          {"The "}
           <Highlight>Growth</Highlight>
-          {" for Startups."}
+          {" Platform for Solo Founders."}
         </h1>
 
         {/* Mobile variant (three stacked lines) */}
@@ -218,16 +218,13 @@ export default function Hero({
           }}
           aria-hidden={!isMobile}
         >
-          <span style={{ display: "block", lineHeight: 1.05, marginBottom: "0.06em" }}>
-            Community Driven
+
+          <span style={{ display: "block", lineHeight: 1.5 }}>
+            The <Highlight>Growth</Highlight> Platform
           </span>
 
-          <span style={{ display: "block", lineHeight: 1.02, marginBottom: "0.06em" }}>
-            <Highlight>Growth</Highlight>
-          </span>
-
-          <span style={{ display: "block", lineHeight: 1.05 }}>
-            for Startups.
+          <span style={{ display: "block", lineHeight: 1.5 }}>
+            for Solo Founders.
           </span>
         </h1>
 

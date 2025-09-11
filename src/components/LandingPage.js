@@ -26,7 +26,7 @@ export default function LandingPage() {
   return (
     <>
   <Helmet>
-  <title>Helping Founders Build, Share & Scale with AI - betaFounder</title>
+  <title>betaFounder – Growth Platform For Solo Founders</title>
   <meta
     name="description"
     content="betaFounder helps early-stage founders share authentic ideas, build in public, and grow with AI-powered content tools."
@@ -42,9 +42,8 @@ export default function LandingPage() {
       <ProblemSolution />
       <FeaturesSection />
       <Feature21 />
-      <FeatureSectionTwo />
       <FeatureSectionThree />
-
+      <FeatureSectionTwo />
       <WhatsAppProblemSolveCard />
       <SimulatedTypingDemo />
 
